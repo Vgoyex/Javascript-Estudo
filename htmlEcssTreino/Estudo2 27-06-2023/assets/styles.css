@@ -1,0 +1,56 @@
+
+.color-blue{
+    transition:all 0.3s ease-in-out;
+}
+
+
+a{
+    color:darkorange;
+}
+a:link{
+    color:deeppink;
+}
+a:visited{
+    color:green;
+}
+a:hover{
+    color:red;
+    text-decoration: none;
+}
+a:active{
+    color:blueviolet;
+}
+
+/* input:focus{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    outline:none;
+    border:1px solid black;
+}
+
+input:disabled{
+    background-color:red;
+    cursor:not-allowed;
+} */
+
+input:checked{
+    width: 100px;
+    height: 100px;
+}
+
+input:checked + p{
+    background:red;
+}
+input:not(:checked) + p {
+    background:yellow;
+}
+
+input:required{
+    background:rgb(0, 4, 255);
+}
+p:not(.teste-nao){
+    color: blue;
+}
+
+.color-blue:hover {
+    background: red;
+}

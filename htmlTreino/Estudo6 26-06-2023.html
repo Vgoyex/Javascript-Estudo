@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        label{
+            cursor:pointer;
+        }
+        #label2{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Titulo</h1>
+    </header>
+
+    <form action="#" method="get" target="_blank" autocomplete="off">
+
+        <fieldset>
+            <legend>Descrição fieldset 1</legend>
+            <p>
+                <label>Nome
+                    <input placeholder="Nome" type="text" id="name" name="name">
+                </label><br>
+
+                <!--Outra maneira de fazer label e input-->
+
+                <!-- <label id="label2" for="name_2">Nome 2</label>
+                <input placeholder="Nome 2" type="text" id="name_2" name="name_2"><br> -->
+
+                <label for="email">E-mail</label>
+                <input placeholder="exemplo@exemplo.com" type="text" id="email" name="email"><br>
+                <label>Senha</label>
+                <input type="password" id="senha" name="senha">
+            </p>
+            <p>
+                <label for="date">Data(date)</label>
+                <input type="date" id="date" name="data_date"><br>
+
+                <label for="datetime">Data(date time)</label>
+                <input type="datetime-local" id="datetime" name="data_dateTimeLocal"><br>
+
+                <label for="time">Tempo(time)</label>
+                <input type="time" id="time" name="time"><br>
+
+                <label>Numero</label>
+                <input type="number" id="numero" name="numero">
+            </p>        
+            <p>
+                <label for="select">Selecione uma opção</label>
+                <select id="select" name="select">
+                    <option value="op1" label="Label 1"></option>
+                    <option value="op2" label="Label 2"></option>
+                </select>
+            </p>
+            <p>
+                <label for="textArea">Text Area</label>
+                <textarea id="textArea" name="textArea"></textarea>
+            </p>
+        </fieldset>
+        
+        <br>
+
+        <fieldset>
+            <legend>Descrição fieldset 2</legend>
+            <p>
+                <label id="dev">Sou um dev</label><br>
+
+                <label for="dev_sim">Sim</label>
+                <input type="radio" id="dev_sim" name="dev" value="sim">
+                
+                <label for="dev_nao">Não</label>
+                <input type="radio" id="dev_nao" name="dev" value="nao">
+            </p>
+            <p>
+                <label>Gênero</label><br>
+                <label for="genero_M">Masculino</label>
+                <input type="radio" id="genero_M" name="genero" value="masculino">
+                <label for="genero_F">Feminino</label>
+                <input type="radio" id="genero_F" name="genero" value="feminino">
+            </p>
+            <p>
+                <label for="foto">Escolha uma Imagem</label>
+                <input type="file" id="foto" name="foto" accept=".png, .jpg" multiple>
+            </p>
+            <p>
+                <label for="range">Input de Range</label>
+                <input type="range" id="range" name="range">
+            </p>
+            <p>
+                <label>Url</label>
+                <input type="url" id="url" name="url"><br>
+                <label>Input Search(para buscadores como barra de pesquisa do google)</label>
+                <input type="search" id="search" name="search">
+            </p>
+        </fieldset>
+        <p>
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+        </p>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    /* background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7kzqFA7TchAWL4CkcXaCo-skg86g4jQ59Q&usqp=CAU); */
+    background-position:center center;
+    background-size: cover;
+    /* background-color:#111b21; */
+}
+#tudo{
+    display:flex;
+    width: 1600px;
+    height:900px;
+    margin: 19px 200px 19px 200px;
+}
+#tela-e-conversas{
+   background:red;
+}
+
+.header-esquerda{
+    display:flex;
+    background-color: #202C33;
+    width: 365px;
+    height:45px;
+    /* margin:10px 10px 10px 50px; */
+    padding:10px 16px 10px 16px;
+    box-sizing:border-box;
+    border-radius: 2px;
+}
+
+.contatos{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border:1px solid black;
+    border-radius: 2px;
+}
+
+.header-direita{
+    display:flex;
+    background-color: #202C33;
+    width: 900px;
+    height:45px;
+    padding:10px 16px 10px 16px;
+    box-sizing:border-box;
+    border-left:1px solid black;
+    border-radius: 2px;
+}
+.div-direita{
+    border:4px solid red;
+}
+.div-esquerda{
+    border:4px solid blue;
+}
+
+.div-direita p{
+    color:white;
+}
+.div-esquerda p{
+    color:white;
+}
+
+
+.formulario-esquerda{
+    margin: 10px 10px 10px 10px; 
+}
+
+input:required:hover{
+    background-color: rgba(255, 0, 0, 0.788);
+    transition:all 0.3s ease-in-out ;
+    color:white;
+}

@@ -1,0 +1,27 @@
+p{
+    font-size:20px;
+}
+p::first-letter{
+    font-size: 70px;
+    font-style: italic;
+    display:block;
+    float:left;
+    margin: 0 10px 10px 0;
+}
+p::first-line{
+    color:red;
+}
+p::selection{
+    background:black;
+    color:white;
+}
+input::placeholder{
+    color:purple;
+}
+
+.form-field{
+display: block;
+}
+.form-field::placeholder{
+    color:red;
+}
