@@ -59,11 +59,20 @@ form button:hover{
     background-color: var(--cor-fundo);
 }
 
-.resultado{
+.fundo-success{
     margin-top:10px;
     margin-bottom:10px;
-    color:white;
+    color:black;
     background-color:rgb(67, 175, 103);
+    padding:10px;
+    border-radius:3px;
+}
+
+.fundo-error{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:black;
+    background-color:rgb(202, 61, 61);
     padding:10px;
     border-radius:3px;
 }

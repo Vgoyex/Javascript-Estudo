@@ -1,70 +1,123 @@
 function principal() {
   const form = document.querySelector(".formulario");
-  const result = document.querySelector(".resultado");
-  const peso = form.querySelector(".peso");
-  const altura = form.querySelector(".altura");
+  const result = document.querySelector("#resultado");
   const ls = [];
 
-  form.addEventListener('submit', function(event){
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log('evento prev');
+    console.log("evento prev");
   });
 
-  function calculaImc(event){
+  function exibeImc(event) {
     event.preventDefault();
-    debugger;
+
+    const mascaraPeso = "";
+    const mascaraAltura = "";
     let mensagem;
-    let resultado;
-    const mascaraPeso = '';
-    const mascaraAltura = '';
-    let pesoValue = parseFloat(peso.value);
-    let alturaValue = parseFloat(altura.value);
-    let resultImc = pesoValue/(alturaValue*alturaValue);
-    
-    console.log(typeof(pesoValue));
+    let resultado = result;
 
-    class Pinto{
+    let objImc = calculaImc();
+    let resultImc = objImc.resultadoFinal;
 
+    if (resultImc == `NaN` || resultImc == undefined) {
+      resultImc = `Valores inseridos incorretamente ${"Peso: " + objImc.peso} ${
+        "Altura: " + objImc.altura
+      }`;
     }
-    let boj;
 
     ls.push(resultImc);
     console.log(ls);
-    
-    if(resultImc < 18.5){
-        mensagem = `Abaixo do peso`;
+
+    mensagem = validaMensagem(resultImc);
+
+    let erro = (() => {
+      resultado.classList.add("fundo-error");
+      if (!objImc.peso && !objImc.altura) {
+        return (resultado.innerHTML = `Altura e Peso Inválidos`);
+      }
+      if (!objImc.peso) {
+        return (resultado.innerHTML = `Peso Inválido`);
+      }
+      if (!objImc.altura) {
+        return (resultado.innerHTML = `Altura Inválida`);
+      } else {
+        return null;
+      }
+    })();
+
+    if (!erro) {
+      resultado.classList.remove("fundo-error");
+      resultado.classList.add("fundo-success");
+      resultado.innerHTML = `IMC: ${resultImc}  ${mensagem}`;
     }
-    else if(resultImc > 18.5 && resultImc <= 24.9){
-        mensagem = `Peso normal`;
+
+    //* Outro método de fazer, porém sempre adicionando mais
+    //* itens
+    //*
+    //* const p = document.createElement('p');
+    //* let erro = (()=>{
+    //*     p.classList.add('fundo-error');
+    //*     if(!objImc.peso && !objImc.altura){
+    //*         p.innerHTML = `Altura e Peso Inválidos`;
+    //*         return resultado = resultado.appendChild(p);
+    //*     }
+    //*     else if(!objImc.peso){
+    //*         p.innerHTML = `Peso Inválido`;
+    //*         return resultado = resultado.appendChild(p);
+    //*     }
+    //*     else if(!objImc.altura){
+    //*         p.innerHTML = `Altura Inválida`;
+    //*         return resultado = resultado.appendChild(p);
+    //*     }else{
+    //*         return null;
+    //*     }
+    //* })();
+
+    //* if(!erro){
+    //*     p.classList.remove('fundo-error');
+    //*     p.classList.add('resultado');
+    //*     p.innerHTML = `IMC: ${resultImc}  ${mensagem}`;
+    //*     resultado.appendChild(p);
+    //* }
+  }
+
+  function calculaImc() {
+    const peso = form.querySelector(".peso");
+    const altura = form.querySelector(".altura");
+
+    let pesoValue = parseFloat(peso.value);
+    let alturaValue = parseFloat(altura.value);
+    let resultImc = pesoValue / (alturaValue * alturaValue);
+    let finalResult = {
+      resultadoFinal: resultImc.toFixed(3),
+      peso: pesoValue,
+      altura: alturaValue,
+    };
+    return finalResult;
+  }
+
+  function validaMensagem(result) {
+    if (result < 18.5) {
+      return `Abaixo do peso`;
     }
-    else if(resultImc >= 25 && resultImc <= 29.9){
-        mensagem = `Sobrepeso`;
+    if (result > 18.5 && result <= 24.9) {
+      return `Peso normal`;
     }
-    else if(resultImc >= 30  && resultImc <= 34.9){
-        mensagem = `Obesidade grau 1`;
+    if (result >= 25 && result <= 29.9) {
+      return `Sobrepeso`;
     }
-    else if(resultImc >= 35 && resultImc <= 39.9 ){
-        mensagem = `Obesidade grau 2`;
+    if (result >= 30 && result <= 34.9) {
+      return `Obesidade grau 1`;
     }
-    else if(resultImc > 40){
-        mensagem = `Obesidade grau 3`;
+    if (result >= 35 && result <= 39.9) {
+      return `Obesidade grau 2`;
     }
-    
-    if(!pesoValue && !alturaValue){
-        resultado = result.innerHTML = `Altura e Peso Inválidos`;
+    if (result > 40) {
+      return `Obesidade grau 3`;
     }
-    else if(!pesoValue){
-        resultado = result.innerHTML = `Peso Inválido`;
-    }
-    else if(!alturaValue){
-        resultado = result.innerHTML = `Altura Inválida`;
-    }
-    else{
-        resultado = result.innerHTML = `IMC: ${resultImc.toFixed(3)}  ${mensagem}`;
-    }
-    
+  }
+
+  const calcula = form.addEventListener("submit", exibeImc);
 }
 
-const calcula = form.addEventListener("submit", calculaImc);
-}
 principal();
