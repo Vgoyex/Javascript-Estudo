@@ -1,4 +1,4 @@
-function principal() {
+function main() {
   const form = document.querySelector(".formulario");
   const result = document.querySelector("#resultado");
   const ls = [];
@@ -120,4 +120,4 @@ function principal() {
   const calcula = form.addEventListener("submit", exibeImc);
 }
 
-principal();
+main();
