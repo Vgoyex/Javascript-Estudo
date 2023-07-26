@@ -5,7 +5,7 @@ function principal() {
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log("evento prev");
+    console.log("evento prevent default");
   });
 
   function exibeImc(event) {
