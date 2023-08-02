@@ -88,13 +88,13 @@ timer.innerHTML = relogioZerado;
 document.addEventListener("click", (eventParam) => {
   const elemento = eventParam.target;
   if (elemento.classList.contains("iniciar")) {
-    start;
+    start();
   }
   if (elemento.classList.contains("parar")) {
-    stop;
+    stop();
   }
   if (elemento.classList.contains("zerar")) {
-    zerarF;
+    zerarF();
   }
 });
 
