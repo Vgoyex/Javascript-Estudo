@@ -63,10 +63,79 @@ function timerCount() {
   }, 1000);
 }
 
-
 //* Função para formatar os números do timer
 function zeroBehind(num) {
   return num >= 10 ? num : `0${num}`;
 }
 
+//* Assim que carregar a página os eventos da função eventButtons estarão prontos para serem usados
 window.addEventListener("load", eventButtons);
+
+
+/*//*================= Outra, e talvez melhor, maneira de fazer ↧ ================= 
+
+const timer = document.querySelector(".timer");
+
+let intervalo;
+let segundos = 0;
+let minutos = 0;
+let horas = 0;
+const relogioZerado = "00:00:00";
+
+timer.classList.add("timer");
+timer.innerHTML = relogioZerado;
+
+document.addEventListener("click", (eventParam) => {
+  const elemento = eventParam.target;
+  if (elemento.classList.contains("iniciar")) {
+    start;
+  }
+  if (elemento.classList.contains("parar")) {
+    stop;
+  }
+  if (elemento.classList.contains("zerar")) {
+    zerarF;
+  }
+});
+
+function start() {
+  timer.classList.remove("parado");
+  timer.classList.add("timer");
+  clearInterval(intervalo);
+  timerCount();
+}
+
+function timerCount() {
+  intervalo = setInterval(() => {
+    segundos++;
+    if (segundos > 59) {
+      segundos = 0;
+      minutos++;
+    }
+    if (minutos > 59) {
+      minutos = 0;
+      horas++;
+    }
+    timer.innerHTML = `${zeroBehind(horas)}:${zeroBehind(minutos)}:${zeroBehind(segundos)}`;
+  }, 1000);
+}
+
+function stop() {
+  timer.classList.remove("timer");
+  timer.classList.add("parado");
+  clearInterval(intervalo);
+}
+
+function zerarF() {
+  timer.classList.remove("parado");
+  timer.classList.add("timer");
+  segundos = 0;
+  minutos = 0;
+  horas = 0;
+  return (timer.innerHTML = `${zeroBehind(horas)}:${zeroBehind(minutos)}:${zeroBehind(segundos)}`);
+}
+
+function zeroBehind(num) {
+  return num >= 10 ? num : `0${num}`;
+}
+*/
