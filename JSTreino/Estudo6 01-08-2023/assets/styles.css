@@ -5,7 +5,7 @@
     padding:0px;
     outline:0;
     box-sizing:border-box;
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root{
@@ -55,8 +55,41 @@ form button{
     cursor: pointer;
     margin-top:20px;
     margin-bottom:0px;
+    padding:10px;
 }
 
 form button:hover{
     background-color: var(--cor-fundo);
+}
+
+.fundo-success{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:black;
+    background-color:rgb(67, 175, 103);
+    padding:10px;
+    border-radius:3px;
+}
+
+.fundo-error{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:black;
+    background-color:rgb(202, 61, 61);
+    padding:10px;
+    border-radius:3px;
+}
+
+.timer{
+    font-size: 70px;
+}
+.parado{
+    font-size:70px;
+    color:red;
+}
+.titulo{
+    font-size:45px;
+}
+button{
+    font-size:30px;
 }
