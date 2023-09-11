@@ -48,7 +48,6 @@ function showNum(element) {
 }
 
 function calc() {
-  debugger;
   let dv = display.value;
   try {
     ev = eval(dv);

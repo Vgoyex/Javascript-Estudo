@@ -15,11 +15,11 @@ console.log(uno);
 
 const pessoa = {
  nome:"Fernando",
- sobrenome:"Vieira",
+ sobrenome:"D.",
  endereco:{
-    rua:"Rua Retiro",
-    numero:145,
-    complemento:"Apto 24 B",
+    rua:"Rua da Silva",
+    numero:15,
+    complemento:"Apto 10 A",
  },
  a:1,
  b:2,
@@ -30,7 +30,7 @@ console.log(variavel,sobrenome,ruaVariavel,numeroVariavel);
 
 variavel = ()=>{
     if(variavel){
-        return variavel = "Oiiii";
+        return variavel = "auto";
     }
 };
 variavel();
