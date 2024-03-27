@@ -1,0 +1,29 @@
+[{
+    "name": "Flinstons",
+    "lastName": "Jhonsons",
+    "estado": "SP",
+    "igAccount":"flinstons45",
+    "email":"flinstons@jhonsons.com",
+    "twAccount":"flJhonson"    
+},
+{
+    "name": "Julia",
+    "email": "julia@email.com.br",
+    "salario": 24250,
+    "estado": "RO",
+    "empresa": "Uber",
+    "idade": 42,
+    "sexo": "F",
+    "cpf": "475.250.344-19"
+  },
+  {
+    "name": "Isabella",
+    "email": "isabella@uol.com.br",
+    "salario": 37303,
+    "estado": "RO",
+    "empresa": "Enum G.",
+    "idade": 59,
+    "sexo": "F",
+    "cpf": "787.264.677-39"
+  }
+]

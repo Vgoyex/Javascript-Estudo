@@ -1,0 +1,63 @@
+>                       Utilizando o express como EXEMPLO, porém tudo utilizado aqui serve para QUALQUER PACOTE
+
+
+npm update -> {
+    Atualiza todos os pacotes permitidos, ou seja, todos os pacotes que estejam com o ^ na frente, exemplo:
+    {"express": "^4.18.2"} 
+
+        4.          18.       2
+       major       minor    patch 
+    
+    Porém nunca atualizaria a major, sempre faz atualizações minors ou patchs, pois tem o ^ na frente
+
+    Agora caso a dependecie esteja com ~ na frente e eu queira dar update, ele só atualizaria o patch, exmeplo:
+    {"express": "~4.18.2"} 
+}
+
+npm i express -E -> {
+    O "-E" remove o ^ de  {"express": "^4.18.2"} permitindo que utilize a versão específica, 
+    assim quando eu utilizar o comando "npm update" a versão permanecerá a mesma, atualizando os demais pacotes
+}
+npm i express --save-dev/prod ->{ 
+    Movo as dependecies para devDependencies exemplo:
+    "dependencies": {"express": "^4.18.2" }
+
+    npm i express --save-dev
+
+    "devDependencies": {"express": "^4.18.2"}
+
+    Para voltar para dependecies, basta utilizar npm i express --save-prod 
+}
+
+npm i express@... -> {
+    Quando coloco @ na frente do nome do pacote que quero instalar, isso permite que eu selecione a versão, exemplo:
+    
+    npm i express@2.1.2
+
+    Nesse caso estou instalando a versão 2.1.2 do express 
+}
+
+npm ls -> {
+    Lista os pacotes instalados
+}
+
+npm ls --depth=1 -> {
+    Lista os pacotes instalados e também uma pasta de profundidade para dentro, escolhendo a profundidade desejada, exemplo:
+
+    npm ls --depth=1
+
+    express@4.18.2
+        ├── accepts@1.3.8
+        ├── array-flatten@1.1.1
+    
+    e assim por diante
+
+    Listando tudo que tem na "pasta" express@4.18.2 para dentro, nesse como como usamos --depth=1, 
+    mas poderia ser qualquer numero/profundidade desejada
+
+    Como na altura da árvore
+}
+
+npm outdated -> {
+    Verifica qual pacote está dezatualizado
+}

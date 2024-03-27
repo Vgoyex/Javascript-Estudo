@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    outline:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --cor-fundo:rgb(56, 54, 148); 
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+.container{
+    max-width: 640px;
+    margin:40px auto 0px auto;
+    background-color:aliceblue;
+    border:1.5px solid black;
+    border-radius:10px; 
+    padding:20px;   
+}
+
+form label, form input, form button{
+    display:block;
+    width:100%;
+    margin-bottom:7px;
+}
+
+form input{
+    font-size:20px;
+    height:25px;
+    padding:0px 10px;
+    border:1px solid black;
+    border-radius:7px;
+}
+
+form input:hover{
+    border:1px solid rgb(68, 0, 255);
+}
+
+form input:focus{
+    outline: 1px solid var(--cor-fundo);
+}
+
+form button{
+    border:none;
+    border-radius:7px;
+    background:rgba(92, 58, 187, 0.637);
+    font-size:20px;
+    cursor: pointer;
+    margin-top:20px;
+    margin-bottom:0px;
+    padding:10px;
+}
+
+form button:hover{
+    background-color: var(--cor-fundo);
+}
+
+.fundo-success{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:black;
+    background-color:rgb(67, 175, 103);
+    padding:10px;
+    border-radius:3px;
+}
+
+.fundo-error{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:black;
+    background-color:rgb(202, 61, 61);
+    padding:10px;
+    border-radius:3px;
+}
+
+.timer{
+    font-size: 70px;
+}
+.parado{
+    font-size:70px;
+    color:red;
+}
+.titulo{
+    font-size:45px;
+}
+button{
+    font-size:30px;
+}
+
+.error-text{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:rgb(209, 18, 18);
+    /* background-color:rgb(202, 61, 61); */
+    /* padding:10px;
+    border-radius:3px; */
+    width: 100%;
+    height: 100%;
+}
